@@ -43,6 +43,10 @@ provider:
 # you can define service wide environment variables here
 #  environment:
 #    variable1: value1
+custom:
+  memorySize: 512
+  timeout: 30
+
 
 # you can add packaging information here
 #package:
@@ -54,8 +58,12 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  LambdaFindCurrentUser:
+    name: wakatime-api-find-current-user
+    handler: app/interface/api.find_current_user_handler
+    description: wakatime APIから現在アクセスしているユーザーを取得
+    memorySize: ${self:custom.memorySize}
+    timeout: ${self:custom.timeout}
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
