@@ -7,4 +7,4 @@ class FindCurrentUser:
         self.datasource = datasource
 
     def run(self) -> User:
-        self.datasource.get_user()
+        return self.datasource.get_user()

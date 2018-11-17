@@ -9,7 +9,7 @@ class WakatimeAPIDataSource:
     def __init__(self):
         if 'WAKATIME_API_KEY' not in os.environ:
             print('os.environ[\'WAKATIME_API_KEY\'] is NOT set!!')
-            raise
+            #  raise
         self.api_key = os.environ['WAKATIME_API_KEY']
         self.base_url = 'https://wakatime.com/api/v1'
 
